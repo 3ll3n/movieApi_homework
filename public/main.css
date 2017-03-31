@@ -1,3 +1,13 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  color: white;
+  text-align: center;
+  /*Thanks to Lloyd Dirks for the photo - found on Unsplash.com*/
+  background: url('lloyd-dirks-74271.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 60px;
 }

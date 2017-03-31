@@ -1,5 +1,21 @@
+var makeRequest = function(url, callback) {
+  var request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = callback;
+  request.send();
+};
+
+var requestComplete = function() {
+  if (this.status !== 200) {
+    return;
+  }
+  var jsonString = this.responseText;
+  var movie = JSON.parse(jsonString);
+}
+
 var app = function() {
 
 };
 
 window.onload = app;
+
