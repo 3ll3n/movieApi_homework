@@ -18,21 +18,32 @@ var requestComplete = function() {
 var displayResults = function(movie) {
  var ul = document.querySelector("#results");
  var li = createMovieLi(movie);
+ ul.innerHTML = "";
  ul.appendChild(li);
 };
 
 var createMovieLi = function(movie) {
   var li = document.createElement("li");
-  li.innerText = movie.Title;
+  li.innerText = "Title: " + movie.Title + "\n Genre: " + movie.Genre + "\n Plot: " + movie.Plot;
   return li;
 };
 
-var app = function() {
+var getUserInput = function() {
+  var searchText = document.querySelector("#search-text");
+  var userInput = searchText.value;
+  return userInput;
+};
 
-  var url = "http://www.omdbapi.com/?t=The+Proposal";
+var createUrl = function() {
+  var url = "http://www.omdbapi.com/?t=" + getUserInput();
+  return url;
+}
+
+var app = function() {
 
   var button = document.querySelector("#search-button");
   button.onclick = function() {
+    var url = createUrl();
     makeRequest(url, requestComplete);
   };
 };
