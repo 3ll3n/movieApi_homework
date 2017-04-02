@@ -11,3 +11,20 @@ body {
 h1 {
   font-size: 60px;
 }
+
+button {
+  font-size: 15px;
+  border-radius: 12px;
+  background-color: white;
+}
+
+input {
+  width: 35%;
+  font-size: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
