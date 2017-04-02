@@ -18,14 +18,22 @@ var requestComplete = function() {
 var displayResults = function(movie) {
  var ul = document.querySelector("#results");
  var li = createMovieLi(movie);
+ var img = createMovieImg(movie);
  ul.innerHTML = "";
  ul.appendChild(li);
+ ul.appendChild(img);
 };
 
 var createMovieLi = function(movie) {
   var li = document.createElement("li");
-  li.innerText = "Title: " + movie.Title + "\n Genre: " + movie.Genre + "\n Plot: " + movie.Plot;
+  li.innerText = "Title: " + movie.Title + "\n Genre: " + movie.Genre + "\n Plot: " + movie.Plot + "\n " + movie.Poster;
   return li;
+};
+
+var createMovieImg = function(movie) {
+  var img = document.createElement("img");
+  img.src = this.Poster;
+  return img;
 };
 
 var getUserInput = function() {
