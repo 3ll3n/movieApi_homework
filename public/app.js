@@ -18,21 +18,21 @@ var requestComplete = function() {
 var displayResults = function(movie) {
  var ul = document.querySelector("#results");
  var li = createMovieLi(movie);
- var img = createMovieImg(movie);
  ul.innerHTML = "";
  ul.appendChild(li);
- ul.appendChild(img);
 };
 
 var createMovieLi = function(movie) {
   var li = document.createElement("li");
-  li.innerText = "Title: " + movie.Title + "\n Genre: " + movie.Genre + "\n Plot: " + movie.Plot + "\n " + movie.Poster;
+  li.innerText = "Title: " + movie.Title + "\n Genre: " + movie.Genre + "\n Plot: " + movie.Plot;
+  var img = createMovieImg(movie);
+  li.appendChild(img);
   return li;
 };
 
 var createMovieImg = function(movie) {
   var img = document.createElement("img");
-  img.src = this.Poster;
+  img.src = movie.Poster;
   return img;
 };
 
